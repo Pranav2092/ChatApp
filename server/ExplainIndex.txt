@@ -1,0 +1,13 @@
+This code sets up an Express server to handle API requests.
+First, it imports the necessary modules: express, cors, and mongoose.
+Then, it imports the route handlers from the respective route files: userRoute, chatRoute, and messageRoute.
+Next, it creates an instance of the Express application and assigns it to the app variable.
+The dotenv module is used to load environment variables from a .env file.
+The express.json() middleware is used to parse JSON data in the request body.
+The cors() middleware is used to enable Cross-Origin Resource Sharing (CORS), allowing requests from different origins.
+The routes are mounted on different paths using the app.use() method. The userRoute is mounted on the "/api/users" path, the chatRoute on the "/api/chats" path, and the messageRoute on the "/api/messages" path.
+The app.get() method defines a route handler for the root path ("/") that sends a "Welcome to Chat App APIs..." message as the response.
+The app.listen() method starts the server and listens on the specified port. The port is set to 5000 or the value of the process.env.PORT environment variable.
+The mongoose.connect() method is used to establish a connection to a MongoDB database. The connection URI is retrieved from the process.env.ATLAS_URI environment variable.
+If the MongoDB connection is successful, it logs a success message to the console. If it fails, it logs an error message.
+In summary, this code sets up an Express server with middleware for handling API requests. It defines routes for users, chats, and messages, and establishes a connection to a MongoDB database.

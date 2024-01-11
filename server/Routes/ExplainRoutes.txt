@@ -1,0 +1,37 @@
+User Route
+
+This code sets up an Express router for handling user-related routes.
+First, it imports the express module and the registerUser, loginUser, findUser, and getUsers functions from the userController module located in the "../Controller" directory.
+Then, it creates an instance of the Express router using express.Router() and assigns it to the router variable.
+Next, it defines four routes on the router:
+    The first route is a POST route that maps to the "/register" path. It invokes the registerUser function when this route is accessed.
+    The second route is a POST route that maps to the "/login" path. It invokes the loginUser function when this route is accessed.
+    The third route is a GET route that maps to the "/find/:userId" path. It invokes the findUser function when this route is accessed. The :userId parameter in the route path can be accessed within the findUser function.
+    The fourth route is a GET route that maps to the root ("/") path. It invokes the getUsers function when this route is accessed.
+Finally, the router is exported so that it can be used in other parts of the codebase.
+In summary, this code sets up a router for user-related routes in an Express application. It defines routes for registering a user, logging in a user, finding a specific user based on the user ID, and retrieving all users.
+
+
+Message Route
+
+This code sets up an Express router for handling message-related routes.
+First, it imports the express module and the createMessage and getMessages functions from the messageController module located in the "../Controller" directory.
+Then, it creates an instance of the Express router using express.Router() and assigns it to the router variable.
+Next, it defines two routes on the router:
+    The first route is a POST route that maps to the root ("/") path. It invokes the createMessage function when this route is accessed.
+    The second route is a GET route that maps to the "/:chatId" path. It invokes the getMessages function when this route is accessed. The :chatId parameter in the route path can be accessed within the getMessages function.
+Finally, the router is exported so that it can be used in other parts of the codebase.
+In summary, this code sets up a router for message-related routes in an Express application. It defines routes for creating a message and retrieving messages for a specific chat based on the chat ID.
+
+
+Chat Route
+
+This code sets up an Express router for handling chat-related routes.
+First, it imports the express module and the createChat, findUserChat, and findChat functions from the chatController module located in the "../Controller" directory.
+Then, it creates an instance of the Express router using express.Router() and assigns it to the router variable.
+Next, it defines three routes on the router:
+    The first route is a POST route that maps to the root ("/") path. It invokes the createChat function when this route is accessed.
+    The second route is a GET route that maps to the "/:userId" path. It invokes the findUserChat function when this route is accessed. The :userId parameter in the route path can be accessed within the findUserChat function.
+    The third route is a GET route that maps to the "/find/:firstId/:secondId" path. It invokes the findChat function when this route is accessed. The :firstId and :secondId parameters in the route path can be accessed within the findChat function.
+Finally, the router is exported so that it can be used in other parts of the codebase.
+In summary, this code sets up a router for chat-related routes in an Express application. It defines routes for creating a chat, finding user chats, and finding a specific chat based on two user IDs.

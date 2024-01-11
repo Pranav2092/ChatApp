@@ -1,0 +1,34 @@
+User Model
+
+This code defines a Mongoose schema for a user in a MongoDB database.
+First, it imports the mongoose module.
+Then, it creates a new schema called userSchema. The schema has three fields: name, email, and password. Each field has a specific configuration:
+    name is of type String and is required. It has a minimum length of 3 characters and a maximum length of 30 characters.
+    email is of type String and is required. It has a minimum length of 3 characters, a maximum length of 200 characters, and must be unique.
+    password is of type String and is required. It has a minimum length of 3 characters and a maximum length of 1024 characters.
+The timestamps: true option is set in the schema, which means that Mongoose will automatically add createdAt and updatedAt fields to each document in the collection.
+After defining the schema, the code creates a model using mongoose.model(). The model is named "User" and it is based on the userSchema that was defined earlier.
+Finally, the userModel is exported so that it can be used in other parts of the codebase.
+In summary, this code sets up a schema and model for a user in a MongoDB database using Mongoose. The user has fields for the name, email, and password, with specific validations and configurations for each field.
+
+
+Message Model
+
+This code defines a Mongoose schema for a message in a MongoDB database.
+First, it imports the mongoose module.
+Then, it creates a new schema called messageSchema. The schema has three fields: chatId, senderId, and text. All three fields are of type String.
+The timestamps: true option is set in the schema, which means that Mongoose will automatically add createdAt and updatedAt fields to each document in the collection.
+After defining the schema, the code creates a model using mongoose.model(). The model is named "Message" and it is based on the messageSchema that was defined earlier.
+Finally, the messageModel is exported so that it can be used in other parts of the codebase.
+In summary, this code sets up a schema and model for a message in a MongoDB database using Mongoose. The message has fields for the chat ID, sender ID, and the text content of the message.
+
+
+Chat Model
+
+This code defines a Mongoose schema for a chat in a MongoDB database.
+First, it imports the mongoose module.
+Then, it creates a new schema called chatSchema. The schema has a single field called members, which is an array.
+The timestamps: true option is set in the schema, which means that Mongoose will automatically add createdAt and updatedAt fields to each document in the collection.
+After defining the schema, the code creates a model using mongoose.model(). The model is named "Chat" and it is based on the chatSchema that was defined earlier.
+Finally, the chatModel is exported so that it can be used in other parts of the codebase.
+In summary, this code sets up a schema and model for a chat in a MongoDB database using Mongoose.

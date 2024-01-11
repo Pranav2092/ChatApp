@@ -1,0 +1,54 @@
+User Controllers
+
+createToken : This code snippet defines a function called createToken that takes an _id parameter. It uses the jwt library to generate a JSON Web Token (JWT) by signing the _id with a JWT secret key obtained from the environment variables. The generated token will expire in 3 days.
+
+registerUser : This code snippet is a JavaScript function that registers a user in a web application. It takes in a request (req) and response (res) as parameters. Here's a summary of what the code does:
+    1.Destructures the name, email, and password fields from the request body.
+    2.Checks if a user with the given email already exists. If so, returns a 400 status code with an error message.
+    3.Checks if all fields (name, email, password) are present. If not, returns a 400 status code with an error message.
+    4.Validates the email format using a third-party library called validator. If the email is invalid, returns a 400 status code with an error message.
+    5.Validates the password strength using a third-party library called validator. If the password is weak, returns a 400 status code with an error message.
+    6.Creates a new user object with the name, email, and password.
+    7.Generates a salt using bcrypt library and hashes the user's password.
+    8.Saves the user to the database.
+    9.Creates a token for the user using a createToken function.
+    10.Returns a 200 status code with the user's _id, name, email, and token in the response body.
+    11.Catches any errors that occur during the registration process and returns a 500 status code with the error in the response body.
+
+loginUser: This code snippet defines an asynchronous function called loginUser, which takes in a request object (req) and a response object (res).
+    Inside the function, it extracts the email and password from the request body using destructuring assignment.
+    Then, it tries to find a user with the given email in the database using the findOne method of a userModel. If no user is found, it returns a response with a status code of 400 and a JSON message indicating an invalid email or password.
+    If a user is found, it uses the bcrypt.compare method to compare the provided password with the hashed password stored in the user object. If the password is not valid, it returns a similar response as before.
+    If the password is valid, it creates a token using the createToken function and sends a response with a status code of 200 and a JSON object containing the user's ID, name, email, and the token.
+    If any error occurs during the process, it logs the error to the console and sends a response with a status code of 500 and the error object as JSON.
+
+findUser : This code snippet defines an asynchronous function called findUser that takes in a request object (req) and a response object (res). Inside the function, it retrieves the userId from the request parameters and uses it to find a user in the database using the userModel.findById method. If the user is found, it sends a JSON response with a status code of 200 and the user data. If there is an error during the process, it logs the error to the console and sends a JSON response with a status code of 500 and the error data.
+
+getUsers : This code snippet defines an asynchronous function called getUsers that takes in two parameters, req and res. Inside the function, it uses the userModel to find all users and assigns the result to the users variable. Then, it sends a JSON response with a status code of 200 and the users array. If there is an error, it logs the error and sends a JSON response with a status code of 500 and the error.
+
+
+Messages Controllers
+
+createMessage : This code snippet defines an asynchronous function called createMessage that takes in a req and res object as parameters. It destructures the chatId, senderId, and text properties from the req.body object.
+    Then, it creates a new message object using the messageModel constructor with the extracted properties.
+    The code then tries to save the message object to the database using the message.save() method. If the save operation is successful, it sends a JSON response with the saved message and a status code of 200.
+    If there is an error during the save operation, it logs the error to the console and sends a JSON response with the error and a status code of 500.
+
+getMessages : This code snippet defines an asynchronous function called getMessages that takes in a req and res object as parameters. Inside the function, it extracts the chatId from the req.params object. It then tries to find messages in the database associated with the extracted chatId using the messageModel. If the operation is successful, it sends a response with a status code of 200 and the found messages as JSON. If there is an error, it logs the error and sends a response with a status code of 500 and the error as JSON.
+
+
+Chat Controllers
+
+createChat : This code snippet defines an asynchronous function named createChat that handles a request and response in an API.
+    It receives a req object and a res object as parameters. The function extracts firstId and secondId from the request body using object destructuring.
+    Inside the try block, it uses the chatModel to find a chat with matching firstId and secondId in the database. If a chat is found, it sends a JSON response with a status code of 200 and the chat data.
+    If no chat is found, it creates a new chat using the chatModel and the members array containing firstId and secondId. The new chat is then saved to the database using the save() method.
+    Finally, it sends a JSON response with a status code of 200 and the response data. If an error occurs, it logs the error to the console and sends a JSON response with a status code of 500 and the error data.
+
+findUserChat : This code defines an asynchronous function called findUserChat that takes in a request (req) and response (res) object. It expects a userId parameter from the request.
+    Inside the function, it uses the chatModel to find all chats where the members array includes the userId. It then sends the found chats as a JSON response with a status code of 200.
+    If there is an error during the execution, it logs the error and sends a JSON response with a status code of 500.
+
+findChat : This code snippet defines an asynchronous function called findChat that takes in a request and response object. It extracts the values of firstId and secondId from the request parameters.
+    Inside a try block, it queries the database using the chatModel to find a chat where the members array contains both firstId and secondId. If a chat is found, it sends a JSON response with the chat data and a status code of 200.
+    If an error occurs during the database query, it logs the error to the console and sends a JSON response with the error and a status code of 500.
