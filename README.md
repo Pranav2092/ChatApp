@@ -23,7 +23,12 @@ This app is created in three parts:
 
 #Client
 
+The client folder consists of the UI of our app. It comprises assets, components, context, hooks, pages and utils folder. The assets folder contains static data like the logo, icons, etc.
+
 #Server
-In our server app, we have created the controllers, routes, and models for our application. The model describes how our users, chats and messages will be stored in our database. The controllers define the API endpoints for our app. The routes describe the routes to be taken by the request call from the client to the server.
+
+In our server app, we have created our application's controllers, routes, and models. The model describes how our users, chats and messages will be stored in our database. The controllers define the API endpoints for our app. The routes describe the routes to be taken by the request call from the client to the server.
+
 #Socket
 
+The socket file consists of the program to connect our client to our server to provide a real-time chatting experience to the users. We have used the Socketio library to create this functionality.
