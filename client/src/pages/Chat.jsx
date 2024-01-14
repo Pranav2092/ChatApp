@@ -9,11 +9,11 @@ import ChatBox from "../components/chat/ChatBox";
 
 const Chat = () => {
     const { user } = useContext(AuthContext);
-    const { userChats, isUserChatsLoading, userChatsError, updateCurrentChat } = useContext(ChatContext);
+    const { userChats, isUserChatsLoading, updateCurrentChat } = useContext(ChatContext);
     //console.log("UserChats",userChats);
     return (
         <Container gap={3} >
-            <Stack direction="horizontal" gap={3} style={{width:"100%", height:"4rem",paddingTop:"1rem", alignItems:"center", paddingLeft:"1rem", borderRadius:"0.5rem", borderBottom:"1px solid rgb(100, 100, 100)",borderTop:"1px solid rgb(100, 100, 100)", borderRight:"1px solid rgb(100, 100, 100)", borderLeft:"1px solid rgb(100, 100, 100)"}}><p >Users</p><PotentialChats/></Stack>
+            <Stack direction="horizontal" style={{width:"100%", height:"4rem",paddingTop:"1rem", alignItems:"center", paddingLeft:"1rem", borderRadius:"0.5rem", borderBottom:"1px solid rgb(100, 100, 100)",borderTop:"1px solid rgb(100, 100, 100)", borderRight:"1px solid rgb(100, 100, 100)", borderLeft:"1px solid rgb(100, 100, 100)"}}><p>Users</p><div><PotentialChats/></div></Stack>
         {(userChats?.length < 1)? null :
             (
                 <Stack direction="horizontal" gap={4} className="align-items-start">
