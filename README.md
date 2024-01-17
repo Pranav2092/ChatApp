@@ -72,7 +72,9 @@ In our server app, we have created our application's controllers, routes, and mo
 The socket file consists of the program to connect our client to our server to provide a real-time chatting experience to the users. We have used the Socketio library to create this functionality.
 
 # How to run the app
-Download the complete code of the project from Git Hub. Then, in the terminal, to run the server, go to the server folder and run the command "npm start".To run the socket server, go to the socket folder and run the "npm start" command in the terminal. To run the client go to client folder and run the command "npm run dev".The website will run at http://localhost:5173.
+Download the complete code of the project from Git Hub. Then, in the terminal, to run the server, go to the server folder and run the command "npm start".To run the socket server, go to the socket folder and run the "npm start" command in the terminal. To run the client, go to the client folder and run the command "npm run dev".The website will run at http://localhost:5173.
 # More features to add
 1. Group chat
 2. End-to-end encryption of messages
+# Problems while scaling the app
+Here, we have used web sockets to provide a real-time chat experience. Because of this, our app is stateful, and our server has to save the state of the user connected to it. This restricts us from scaling our app vertically, i.e., to improve the server's hardware. However, due to technical limitations, we can scale our server to a specific limit; after that, the performance starts degrading. To overcome this problem, we can provide a load balancer that checks the backend servers' health and distributes the load accordingly. To store the state of the users, we can use the Reddis array to save them so that we can use it as a buffer. By using the buffer, we can scale our app horizontally as well.
