@@ -22,14 +22,18 @@ This app is created in three parts:
  3. Socket
 
 # Screenshots of the app
-![Screenshot (579)](https://github.com/Pranav2092/ChatApp/assets/130064033/30cc2333-10fe-48f2-ab8b-a75ed8a6f958)
-
-
-
-
-
-
-
+Registration Page
+![Screenshot (572)](https://github.com/Pranav2092/ChatApp/assets/130064033/fc6b894a-ccc0-4979-9093-1f22fad489c8)
+Login Page
+![Screenshot (573)](https://github.com/Pranav2092/ChatApp/assets/130064033/a01d066b-3e4e-4434-8f18-489e83bd813f)
+Home Page
+![Screenshot (574)](https://github.com/Pranav2092/ChatApp/assets/130064033/e5947496-65aa-4b82-a13f-6d3df357c9a9)
+Chat Page
+![Screenshot (575)](https://github.com/Pranav2092/ChatApp/assets/130064033/0841fdd5-4b66-468e-b699-d3c665effb1c)
+Notifications
+![Screenshot (576)](https://github.com/Pranav2092/ChatApp/assets/130064033/0effe1a0-1e7c-4ae8-9476-7387b1ada1a2)
+![Screenshot (577)](https://github.com/Pranav2092/ChatApp/assets/130064033/a6333e8e-da9a-4f67-8235-9a3bb7bd3d35)
+![Screenshot (578)](https://github.com/Pranav2092/ChatApp/assets/130064033/be8592da-faa5-4a74-8cc7-f39d4148cc33)
 
 # Client
 
