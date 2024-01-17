@@ -44,8 +44,12 @@ The client folder consists of the UI of our app. It comprises assets, components
  The assets folder contains static data like the logo, icons, etc.
 
  # Components
- 
+ The components made in this app are the navigation bar, user chats, potential chats, chat box, and notifications.
+ The navigation bar contains the app name, which, on click, directs the user to the chat page of the currently logged-in user. The user chats component displays all the chats of the user, with the recent message and the other user's name. The potential chats component displays all the registered users. The chat box component displays all the user's messages with the selected recipient user and allows the user to send new messages. The notification component in the navigation bar displays the total number of unread messages. Clicking the notification icon shows who has sent the message.
  # Context
+ The two contexts made here are AuthContext and ChatContext.
+ AuthContext is used to store the register info and login info by sending the data to the server. It keeps the data of the currently logged-in user in the local storage. Also, it passes the details of the users wherever it is required without passing all the details implicitly to every node in the application's tree. 
+ ChatContext is used to create new chats, get all the registered users and all chats of the currently logged-in user, send and receive messages and notifications, and mark notifications as read. It also sends the message to the socketIo server when a new user has logged in, a message is sent, and a user disconnects/logs out. Like AuthContext, it provides all the mentioned details wherever required  explicitly in the applications tree node for processing any data.
  
  # Hooks
  
