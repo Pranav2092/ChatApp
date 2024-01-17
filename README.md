@@ -60,13 +60,14 @@ The client folder consists of the UI of our app. It comprises assets, components
 In our server app, we have created our application's controllers, routes, and models. The model describes how our users, chats and messages will be stored in our database. The controllers define the API endpoints for our app. The routes describe the routes to be taken by the request call from the client to the server.
 
  ### Controllers
- 
+ This is where the APIs of our app are defined. The three controllers made are userController, chatController and messageController.In the user controller, the APIs defined are for registering users, logging in users, finding users and getting users from the database. In the chat controller, the APIs defined are for creating new chats, finding all the chats of the user and finding a particular chat with the selected recipient user. In the message controller, the APIs defined are for creating a new message and getting all the messages.
  ### Routes
+ In this app, we made three route files: user, chat, and message routes. These tell which route to go for a particular request.
  
  ### Models
+ In this app, we have defined three models for storing user details, chat details and messages. The database used is MongoDB.The user's details stored are user ID, name, email, password(in hashed form) and timestamps. The details of the chat stored are chat members and timestamps. The message details stored are sender ID, message, chat ID, and timestamps. The IDs are created using JSON Web Token. The password is hashed using bycrpyt library.
 
 ## Socket
-
 The socket file consists of the program to connect our client to our server to provide a real-time chatting experience to the users. We have used the Socketio library to create this functionality.
 
 ## How to run the app
