@@ -16,12 +16,7 @@
   13. JWT
   14. dotenv
 
-This app is created in three parts:
- 1. Client
- 2. Server
- 3. Socket
-
-# Screenshots of the app
+## Screenshots of the app
 Registration Page
 ![Screenshot (572)](https://github.com/Pranav2092/ChatApp/assets/130064033/fc6b894a-ccc0-4979-9093-1f22fad489c8)
 Login Page
@@ -35,46 +30,51 @@ Notifications
 ![Screenshot (577)](https://github.com/Pranav2092/ChatApp/assets/130064033/a6333e8e-da9a-4f67-8235-9a3bb7bd3d35)
 ![Screenshot (578)](https://github.com/Pranav2092/ChatApp/assets/130064033/be8592da-faa5-4a74-8cc7-f39d4148cc33)
 
-# Client
+This app is created in three parts:
+ 1. Client
+ 2. Server
+ 3. Socket
 
+## Client
 The client folder consists of the UI of our app. It comprises assets, components, context, hooks, pages and utils folder. 
 
- # Assets
-
+ ### Assets
  The assets folder contains static data like the logo, icons, etc.
 
- # Components
+ ### Components
  The components made in this app are the navigation bar, user chats, potential chats, chat box, and notifications.
  The navigation bar contains the app name, which, on click, directs the user to the chat page of the currently logged-in user. The user chats component displays all the chats of the user, with the recent message and the other user's name. The potential chats component displays all the registered users. The chat box component displays all the user's messages with the selected recipient user and allows the user to send new messages. The notification component in the navigation bar displays the total number of unread messages. Clicking the notification icon shows who has sent the message.
- # Context
+ 
+ ### Context
  The two contexts made here are AuthContext and ChatContext.
  AuthContext is used to store the register info and login info by sending the data to the server. It keeps the data of the currently logged-in user in the local storage. Also, it passes the details of the users wherever it is required without passing all the details implicitly to every node in the application's tree. 
  ChatContext is used to create new chats, get all the registered users and all chats of the currently logged-in user, send and receive messages and notifications, and mark notifications as read. It also sends the message to the socketIo server when a new user has logged in, a message is sent, and a user disconnects/logs out. Like AuthContext, it provides all the mentioned details wherever required  explicitly in the applications tree node for processing any data.
  
- # Hooks
+ ### Hooks
  
- # Pages
+ ### Pages
  
- # Utils
+ ### Utils
 
-# Server
-
+## Server
 In our server app, we have created our application's controllers, routes, and models. The model describes how our users, chats and messages will be stored in our database. The controllers define the API endpoints for our app. The routes describe the routes to be taken by the request call from the client to the server.
 
- # Controllers
+ ### Controllers
  
- # Routes
+ ### Routes
  
- # Models
+ ### Models
 
-# Socket
+## Socket
 
 The socket file consists of the program to connect our client to our server to provide a real-time chatting experience to the users. We have used the Socketio library to create this functionality.
 
-# How to run the app
+## How to run the app
 Download the complete code of the project from Git Hub. Then, in the terminal, to run the server, go to the server folder and run the command "npm start".To run the socket server, go to the socket folder and run the "npm start" command in the terminal. To run the client, go to the client folder and run the command "npm run dev".The website will run at http://localhost:5173.
-# More features to add
+
+## More features to add
 1. Group chat
 2. End-to-end encryption of messages
-# Problems while scaling the app
+
+## Problems while scaling the app
 Here, we have used web sockets to provide a real-time chat experience. Because of this, our app is stateful, and our server has to save the state of the user connected to it. This restricts us from scaling our app vertically, i.e., to improve the server's hardware. However, due to technical limitations, we can scale our server to a specific limit; after that, the performance starts degrading. To overcome this problem, we can provide a load balancer that checks the backend servers' health and distributes the load accordingly. To store the state of the users, we can use the Reddis array to save them so that we can use it as a buffer. By using the buffer, we can scale our app horizontally as well.
