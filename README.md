@@ -1,6 +1,5 @@
 # ChatApp
- This is a simple web chat application. This application allows private chatting between two logged-in users.
- The technologies, software, database and libraries used to create this app are:
+ This is a simple web chat application. This application allows private chatting between two logged-in users. The technologies, software, database and libraries used to create this app are:
   1. NodeJS
   2. React
   3. Socketio
@@ -51,11 +50,13 @@ The client folder consists of the UI of our app. It comprises assets, components
  ChatContext is used to create new chats, get all the registered users and all chats of the currently logged-in user, send and receive messages and notifications, and mark notifications as read. It also sends the message to the socketIo server when a new user has logged in, a message is sent, and a user disconnects/logs out. Like AuthContext, it provides all the mentioned details wherever required  explicitly in the applications tree node for processing any data.
  
  ### Hooks
+ Here, we have created two hooks, useFecthRecipient and useFetchLatestMessage. The useFetchRecipient hook takes the current chat and the sender ID as the input and returns the recipient user of the chat. The useFetchLatestMessage hook takes the current chat as the input and returns the latest message sent in the chat.
  
  ### Pages
+ This folder contains three files defining our app's UI: the register page, the login page and the chat page. These are created using the components from the react-bootstrap library.
  
  ### Utils
-
+This folder contains two files that provide some basic functionalities: services and unreadNotifications. The services file contains the postRequest and getRequest functions to help communicate with the server. The unreaddNotifications file filters the notifications and finds whether any notification is read.
 ## Server
 In our server app, we have created our application's controllers, routes, and models. The model describes how our users, chats and messages will be stored in our database. The controllers define the API endpoints for our app. The routes describe the routes to be taken by the request call from the client to the server.
 
