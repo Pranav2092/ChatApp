@@ -21,28 +21,43 @@ This app is created in three parts:
  2. Server
  3. Socket
 
+# Screenshots of the app
+![Screenshot (579)](https://github.com/Pranav2092/ChatApp/assets/130064033/30cc2333-10fe-48f2-ab8b-a75ed8a6f958)
+
+
+
+
+
+
+
+
 # Client
 
 The client folder consists of the UI of our app. It comprises assets, components, context, hooks, pages and utils folder. 
 
-# Assets
+ # Assets
 
-The assets folder contains static data like the logo, icons, etc.
+ The assets folder contains static data like the logo, icons, etc.
 
-# Components
-# Context
-# Hooks
-# Pages
-# Utils
+ # Components
+ 
+ # Context
+ 
+ # Hooks
+ 
+ # Pages
+ 
+ # Utils
+
 # Server
 
 In our server app, we have created our application's controllers, routes, and models. The model describes how our users, chats and messages will be stored in our database. The controllers define the API endpoints for our app. The routes describe the routes to be taken by the request call from the client to the server.
 
-# Controllers
-# Routes
-# Models
-
-
+ # Controllers
+ 
+ # Routes
+ 
+ # Models
 
 # Socket
 
